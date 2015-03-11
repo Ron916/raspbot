@@ -260,7 +260,6 @@ $app->run();
             </li>
             <!-- /.dropdown -->
             <li ng-if="! currentUser" class="dropdown" ng-controller="LoginController as LoginCtrl">
-                {{--hack to help browsers autopopulate angular.js login form field--}}
                 <iframe src="sink.html" name="sink" style="display:none"></iframe>
                 <form name="loginForm"
                       action="sink.html"
@@ -316,9 +315,9 @@ $app->run();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-route.min.js"></script>
-{{--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-sanitize.min.js"></script>--}}
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-sanitize.min.js"></script>-->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-animate.min.js"></script>
-{{--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-cookies.min.js"></script>--}}
+<!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-cookies.min.js"></script>-->
 <script src="{{ asset('js/app.js') }}"></script>
 
 </body>
