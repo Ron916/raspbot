@@ -34,7 +34,7 @@ $app->run();
 
 <body ng-controller="MainController as MainCtrl">
 
-<div id="wrapper">
+<div class="container" id="wrapper">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
