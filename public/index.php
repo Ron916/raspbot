@@ -319,7 +319,7 @@ $app->run();
 <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-sanitize.min.js"></script>-->
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-animate.min.js"></script>
 <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.2/angular-cookies.min.js"></script>-->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="js/app.js"></script>
 
 </body>
 
