@@ -1,1 +1,10 @@
 Raspbot!
+
+Raspbot currently has a Debian build called Raspbian installed version something or other
+
+Running python 3.2.3
+
+raspbot.py is run @reboot so we can put all brain code in there
+
+php webserver files are in /public
+
