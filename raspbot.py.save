@@ -1,0 +1,49 @@
+#Python version 3.2.3
+
+import RPi.GPIO
+import time
+
+
+RPi.GPIO.setmode(RPi.GPIO.BCM)
+RPi.GPIO.setup(21, RPi.GPIO.OUT)
+def one:
+    face = ""
+    command = False
+    timeout = 0
+    on = True
+    while not(face == "q"):
+        face = input()
+        if face == "1":
+            command = True
+        if face == "0":
+            timeout = 0
+            command = False
+        if face == "+":
+            timeout = float(timeout) + 1
+        if face == "-":
+            timeout = float(timeout) - 1
+        print(face +  " <-face")
+        print(repr(command) + " <-command")
+    print(repr(timeout) + " <-timeout")
+    command = not(command)
+    RPi.GPIO.output(21, command)
+    time.sleep(int(timeout))
+
+def two:
+    RPi.GPIO.setup(21
+    command = True
+    while true:
+        
+
+
+#array = ["Steve Perry", "Chuck Norris"]
+#if array[0] > array[1]:
+#    print("you're a towel")
+#else:
+#    print("what no wai")
+
+#text = "?"
+#while not(text == ""):
+#    text = input("Type something: ")
+#    print(text)
+    
