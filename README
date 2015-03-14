@@ -8,3 +8,5 @@ raspbot.py is run @reboot so we can put all brain code in there
 
 php webserver files are in /public
 
+php delivered html is powered by jquery/bootstrap & angular.js, app.js has a skeleton app of sorts
+
