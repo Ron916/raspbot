@@ -3,21 +3,33 @@
 import RPi.GPIO as io
 import time
 
+#ermagherrrddd no async out of teh box
+
+
 class RaspBot:
     gpio = [12,16,21,19]
 
-    @staticmethod
-    def reset_lights():
-        for val in gpio:
+    def reset_lights(self):
+        for val in self.gpio:
             io.output(val, False)
 
     def __init__(self):
         io.setmode(io.BCM)
-        for val in gpio:
+        for val in self.gpio:
             io.setup(val, io.OUT)
+        self.keyboard_loop()
 
+    def keyboard_loop(self):
+        key = ""
+        while not(key == "q"):
+            key = input("Command (q)uit (a) (r)eset: ")
+            print(key)
+            if key == 'a':
+                self.loop_em()
+            if key == 'r':
+                self.reset_lights()
 
-    def one(self):
+    def loop_em(self):
         self.reset_lights()
         count = 0
         while True:
@@ -30,7 +42,6 @@ class RaspBot:
             time.sleep(.2)
 
 pie = RaspBot()
-pie.one()
 
 
 
