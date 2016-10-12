@@ -1,4 +1,6 @@
-Raspbot!
+Raspbot!  For raspberry Pi.
+
+Just a skeleton app for a wifi based raspberry pi to receive commands to control the pi.
 
 Raspbot currently has a Debian build called Raspbian installed version something or other
 
@@ -10,3 +12,4 @@ php webserver files are in /public
 
 php delivered html is powered by jquery/bootstrap & angular.js, app.js has a skeleton app of sorts
 
+todo:  move web from php to python flask :)
