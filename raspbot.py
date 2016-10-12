@@ -3,8 +3,6 @@
 import RPi.GPIO as io
 import time
 
-#ermagherrrddd no async out of teh box
-
 
 class RaspBot:
     gpio = [20,21,22,23,24,25,26,27]
@@ -87,18 +85,3 @@ class RaspBot:
             io.output(var, False)
 
 pie = RaspBot()
-
-
-
-
-#array = ["Steve Perry", "Chuck Norris"]
-#if array[0] > array[1]:
-#    print("you're a towel")
-#else:
-#    print("what no wai")
-
-#text = "?"
-#while not(text == ""):
-#    text = input("Type something: ")
-#    print(text)
-    

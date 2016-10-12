@@ -4,7 +4,7 @@ Raspbot currently has a Debian build called Raspbian installed version something
 
 Running python 3.2.3
 
-raspbot.py is run @reboot so we can put all brain code in there
+raspbot.py is run @boot so we can put all brain code in there
 
 php webserver files are in /public
 
