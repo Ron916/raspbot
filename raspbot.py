@@ -103,6 +103,7 @@ def raspbot(command, value):
             raspBot.loop_forward()
         if value == 'backward':
             raspbot.loop_backward()
+    return '{}'
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
