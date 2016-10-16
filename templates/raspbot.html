@@ -27,7 +27,9 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         $(function(){
+            console.log('jquery loaded');
             $('.js-loop_forward').on('click', function(){
+                console.log('click');
                 $.ajax({
                     url: '/raspbot',
                     method: 'POST'
