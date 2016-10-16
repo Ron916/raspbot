@@ -11,8 +11,6 @@ class RaspBot:
     max_loops = 10
 
     def cli_loop(self):
-        for val in self.gpio:
-            io.setup(val, io.OUT)
         self.keyboard_loop()
 
     def all_off(self):
@@ -25,6 +23,8 @@ class RaspBot:
 
     def __init__(self):
         io.setmode(io.BCM)
+        for val in self.gpio:
+            io.setup(val, io.OUT)
 
     def keyboard_loop(self):
         key = ""
