@@ -37,7 +37,8 @@
                 sendCommand: function(command, value){
                     $.ajax({
                         url: '/raspbot/' + command + '/' + value,
-                        method: 'POST'
+                        method: 'POST',
+                        type: 'JSON'
                     }).done(function(){
 
                     }).fail(function(){
