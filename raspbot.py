@@ -9,8 +9,10 @@ class RaspBot:
     gpio = [20,21,22,23,24,25,26,27]
     timeout = 0.2
     max_loops = 10
+    loop = True
 
     def all_off(self):
+        self.loop = False
         for val in self.gpio:
             io.output(val, False)
 
@@ -50,17 +52,20 @@ class RaspBot:
 
     def loop_forward(self, type = 'all'):
         self.all_off()
-        for x in range(1, self.max_loops):
+        self.loop = True
+        while self.loop:
             self.run_forward(type)    
 
     def loop_backward(self, type = 'all'):
         self.all_off()
-        for x in range(1, self.max_loops):
+        self.loop = True
+        while self.loop:
             self.run_backward(type)	
 
     def back_forth(self, type = 'all'):
         self.all_off()
-        for x in range(1, self.max_loops):
+        self.loop = True
+        while self.loop:
             self.run_forward(type)
             self.run_backward(type)
 
