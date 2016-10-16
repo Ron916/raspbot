@@ -98,12 +98,15 @@ def main():
 
 @app.route('/raspbot/<string:command>/<string:value>', methods=['POST'])
 def raspbot(command, value):
+    jsonResponse = {
+        'errors':False
+    }
     if command == 'loop':
         if value == 'forward':
             raspBot.loop_forward()
         if value == 'backward':
-            raspbot.loop_backward()
-    return '{}'
+            raspBot.loop_backward()
+    return Flask.jsonify(**jsonResponse)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
