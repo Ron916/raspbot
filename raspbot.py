@@ -98,7 +98,7 @@ def main():
 
 @app.route('/raspbot/<string:command>/<string:value>', methods=['POST'])
 def raspbot(command, value):
-    raspBot.loop_forward()
+    raspBot.main_loop()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
