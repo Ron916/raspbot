@@ -102,7 +102,7 @@ def raspbot(command, value):
             raspBot.loop_backward()
         if value == 'stop':
             raspBot.all_off()
-    return jsonify(errors=False)
+    return jsonify()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
