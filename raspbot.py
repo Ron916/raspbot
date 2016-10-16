@@ -1,13 +1,34 @@
 #Python version 3.2.3
 
-import RPi.GPIO as io
+# import RPi.GPIO as io
 import time
+from flask import Flask, render_template
+
+
+app = Flask(__name__)
+# raspBot = RaspBot()
+
+@app.route('/', methods=['GET'])
+def main():
+    return render_template('raspbot.html')
+
+@app.route('/raspbot/<string:command>/', methods=['POST'])
+def raspbot(command):
+    pass
+
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0')
 
 
 class RaspBot:
     gpio = [20,21,22,23,24,25,26,27]
     timeout = 0.2
     max_loops = 10
+
+    def main_loop(self):
+        for val in self.gpio:
+            io.setup(val, io.OUT)
+        self.keyboard_loop()
 
     def all_off(self):
         for val in self.gpio:
@@ -19,9 +40,6 @@ class RaspBot:
 
     def __init__(self):
         io.setmode(io.BCM)
-        for val in self.gpio:
-            io.setup(val, io.OUT)
-        self.keyboard_loop()
 
     def keyboard_loop(self):
         key = ""
@@ -83,5 +101,3 @@ class RaspBot:
             io.output(var, True)
             time.sleep(self.timeout)
             io.output(var, False)
-
-pie = RaspBot()

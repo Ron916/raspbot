@@ -1,6 +1,8 @@
 Raspbot!  For Raspberry Pi.
 
-Just a skeleton app for a wifi based raspberry pi to receive commands to control the pi.
+Just a skeleton app for a wifi based raspberry pi.
+
+Wanting to add ability to receive commands via wifi web host to control the pi.
 
 Raspbot currently has a Debian build called Raspbian installed version something or other
 
