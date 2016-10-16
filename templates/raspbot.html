@@ -13,11 +13,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-md-offset-4">
-                <ul class="list-group">
+                <ul class="list-group js-wrapper">
                     <li class="list-group-item js-loop_forward">
                         Loop Forward
                     </li>
-                    <li class="list-group-item"></li>
+                    <li class="list-group-item js-loop_backward">
+                        Loop Backward
+                    </li>
                 </ul>
             </div>
         </div>
@@ -28,18 +30,27 @@
     <script>
         $(function(){
             console.log('jquery loaded');
+            var raspBot = {
+                sendCommand: function(command, value){
+                    $.ajax({
+                        url: '/raspbot/' + command + '/' + value,
+                        method: 'POST'
+                    }).done(function(){
+
+                    }).fail(function(){
+
+                    });
+                }
+            };
             $('.js-loop_forward').on('click', function(){
-                console.log('click');
-                $.ajax({
-                    url: '/raspbot/loop/forward',
-                    method: 'POST'
-                }).done(function(){
-
-                }).fail(function(){
-
-                });
-
+                raspBot.sendCommand('loop', 'forward');
             });
+            $('.js-loop_backward').on('click', function(){
+                raspBot.sendCommand('loop', 'backward');
+            });
+
+
+
 
         });
     </script>
