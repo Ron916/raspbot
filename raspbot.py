@@ -1,6 +1,6 @@
 #Python version 3.2.3
 
-# import RPi.GPIO as io
+import RPi.GPIO as io
 import time
 from flask import Flask, render_template
 
