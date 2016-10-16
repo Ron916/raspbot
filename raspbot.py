@@ -2,7 +2,7 @@
 
 import RPi.GPIO as io
 import time
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify
 
 
 class RaspBot:
@@ -106,7 +106,7 @@ def raspbot(command, value):
             raspBot.loop_forward()
         if value == 'backward':
             raspBot.loop_backward()
-    return Flask.jsonify(**jsonResponse)
+    return jsonify(**jsonResponse)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
