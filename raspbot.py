@@ -6,15 +6,15 @@ from flask import Flask, render_template
 
 
 app = Flask(__name__)
-# raspBot = RaspBot()
+raspBot = RaspBot()
 
 @app.route('/', methods=['GET'])
 def main():
     return render_template('raspbot.html')
 
-@app.route('/raspbot/<string:command>/', methods=['POST'])
-def raspbot(command):
-    pass
+@app.route('/raspbot/<string:command>/<string:value>', methods=['POST'])
+def raspbot(command, value):
+    raspBot.main_loop()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
