@@ -10,7 +10,7 @@ class RaspBot:
     timeout = 0.2
     max_loops = 10
 
-    def main_loop(self):
+    def cli_loop(self):
         for val in self.gpio:
             io.setup(val, io.OUT)
         self.keyboard_loop()
@@ -98,7 +98,7 @@ def main():
 
 @app.route('/raspbot/<string:command>/<string:value>', methods=['POST'])
 def raspbot(command, value):
-    raspBot.main_loop()
+    raspBot.loop_forward()
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
