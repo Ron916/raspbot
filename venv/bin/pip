@@ -1,4 +1,4 @@
-#!/www/raspbot/venv/bin/python3.5
+#!/www/raspbot/venv/bin/python
 
 # -*- coding: utf-8 -*-
 import re
