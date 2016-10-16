@@ -103,6 +103,8 @@ def raspbot(command, value):
             raspBot.loop_forward()
         if value == 'backward':
             raspBot.loop_backward()
+        if value == 'stop':
+            raspBot.all_off()
     return jsonify(errors=False)
 
 if __name__ == '__main__':

@@ -14,6 +14,9 @@
         <div class="row">
             <div class="col-md-3 col-md-offset-4">
                 <ul class="list-group js-wrapper">
+                    <li class="list-group-item js-loop_stop">
+                        Stop Loop
+                    </li>
                     <li class="list-group-item js-loop_forward">
                         Loop Forward
                     </li>
@@ -47,6 +50,9 @@
             });
             $('.js-loop_backward').on('click', function(){
                 raspBot.sendCommand('loop', 'backward');
+            });
+            $('.js-loop_stop').on('click', function(){
+                raspBot.sendCommand('loop', 'stop');
             });
 
 
