@@ -14,7 +14,9 @@
         <div class="row">
             <div class="col-md-3 col-md-offset-4">
                 <ul class="list-group">
-                    <li class="list-group-item"></li>
+                    <li class="list-group-item .js-loop_forward">
+                        Loop Forward
+                    </li>
                     <li class="list-group-item"></li>
                 </ul>
             </div>
@@ -23,5 +25,21 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.common.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        $(function(){
+            $('.js-loop_forward').on('click', function(){
+                $.ajax({
+                    url: '/raspbot',
+                    method: 'POST'
+                }).done(function(){
+
+                }).fail(function(){
+
+                });
+
+            });
+
+        });
+    </script>
 </body>
 </html>
