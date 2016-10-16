@@ -1,17 +1,14 @@
-#Python version 3.2.3
+#Python version 2
 
 import RPi.GPIO as io
 import time
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, json
 
 
 class RaspBot:
     gpio = [20,21,22,23,24,25,26,27]
     timeout = 0.2
     max_loops = 10
-
-    def cli_loop(self):
-        self.keyboard_loop()
 
     def all_off(self):
         for val in self.gpio:
@@ -26,10 +23,10 @@ class RaspBot:
         for val in self.gpio:
             io.setup(val, io.OUT)
 
-    def keyboard_loop(self):
+    def cli_loop(self):
         key = ""
         while not(key == "q"):
-            key = input("Command (q)uit (l)oop (a)ll (o)ff (r)eset (f)orward (b)ackward (1)BackAndForth (2)LoopForward (3)LoopBackward (4)BackForthEven (5)BackForthOdd: ")
+            key = raw_input("Command (q)uit (l)oop (a)ll (o)ff (r)eset (f)orward (b)ackward (1)BackAndForth (2)LoopForward (3)LoopBackward (4)BackForthEven (5)BackForthOdd: ")
             if key == 'l':
                 self.loop_em()
             if key == 'a':
@@ -105,7 +102,7 @@ def raspbot(command, value):
             raspBot.loop_backward()
         if value == 'stop':
             raspBot.all_off()
-    return jsonify(errors=False)
+    return json.jsonify(errors=False)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
