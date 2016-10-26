@@ -2,16 +2,10 @@ Raspbot!  For Raspberry Pi.
 
 Just a skeleton app for a wifi based raspberry pi.
 
-Wanting to add ability to receive commands via wifi web host to control the pi.
+async provided by OS & SQLite
 
-Raspbot currently has a Debian build called Raspbian installed version something or other
+flaskbot.py and raspbot.py run at OS startup
 
-Running python 3.2.3
+flaskbot updates SQLite database, raspbot reads it for commands.
 
-raspbot.py is run @boot so we can put all brain code in there
-
-php webserver files are in /public
-
-php delivered html is powered by jquery/bootstrap & angular.js, app.js has a skeleton app of sorts
-
-todo:  move web from php to python flask :)
+This allows on-the-fly updating of raspbot commands via web (or any other source)

@@ -1,8 +1,10 @@
 #Python version 2
 
+print('raspbot')
+
 import RPi.GPIO as io
 import time
-from flask import Flask, render_template, jsonify
+from database import Database
 
 
 class RaspBot:
@@ -89,25 +91,9 @@ class RaspBot:
             time.sleep(self.timeout)
             io.output(var, False)
 
-
-
-app = Flask(__name__)
-raspBot = RaspBot()
-
-@app.route('/', methods=['GET'])
-def main():
-    return render_template('raspbot.html')
-
-@app.route('/raspbot/<string:command>/<string:value>', methods=['POST'])
-def raspbot(command, value):
-    if command == 'loop':
-        if value == 'forward':
-            raspBot.loop_forward()
-        if value == 'backward':
-            raspBot.loop_backward()
-        if value == 'stop':
-            raspBot.all_off()
-    return jsonify()
-
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    raspBot = RaspBot()
+    while True:
+        # this loop will check the database for a command and update the raspbot
+        # maybe have it query the database twice per second?
+        pass
